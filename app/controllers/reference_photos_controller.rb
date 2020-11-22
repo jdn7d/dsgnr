@@ -1,0 +1,2 @@
+class ReferencePhotosController < ApplicationController
+end
