@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  #custom routes up here 
+
+  get '/signup' => 'users#new'
+  post '/signup' => 'user#create'
+    #not neccessary but good for user signs up incorrectly 
+      #and needs to be rerouted back to the signup
   resources :reference_photos
   resources :stores
   resources :designers
