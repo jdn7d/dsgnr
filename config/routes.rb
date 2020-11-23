@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   #custom routes up here 
 
-  get '/signup' => 'users#new'
-  post '/signup' => 'user#create'
+  get '/signup' => 'designers#new'
+  post '/signup' => 'designers#create'
     #not neccessary but good for user signs up incorrectly 
       #and needs to be rerouted back to the signup
   resources :reference_photos
