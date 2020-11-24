@@ -4,8 +4,16 @@ Rails.application.routes.draw do
 
   get '/signup' => 'designers#new'
   post '/signup' => 'designers#create'
+
+  get '/signin' => 'sessions#new'
+  post '/signin' => 'sessions#create'
+
+  delete '/logout' => 'sessions#destroy'
+  get '/logout' => 'sessions#destroy'
+
     #not neccessary but good for user signs up incorrectly 
       #and needs to be rerouted back to the signup
+  resources :sessions
   resources :reference_photos
   resources :stores
   resources :designers
