@@ -16,7 +16,6 @@ class RoomsController < ApplicationController
       if @room.save
          redirect_to room_path(@room)
       else
-        binding.pry
          render :new
       end
    end
@@ -32,13 +31,13 @@ class RoomsController < ApplicationController
    def update 
       @room = Room.find(params[:id])
       @room.update(room_params) 
-      redirect_to room_path(@room)
+      redirect_to '/rooms'
    end
 
    def destroy 
       @room = Room.find(params[:id])
       @room.destroy
-      redirect_to room_path(@room)
+      redirect_to rooms_path
    end
 
    private
