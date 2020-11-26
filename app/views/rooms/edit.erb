@@ -1,0 +1,3 @@
+<h1> Edit <%= @room.name %> </h1>
+
+<%= render partial: "form", locals: {room: @room, wall_color: @wall_color, floor_color: @floor_color, light: @light, action: "Edit"} %>

@@ -1,21 +1,4 @@
 <h1> Add a new room </h1>
 
-<%= form_for @room do |f|%>
+<%= render partial: "form", locals: {room: @room, wall_color: @wall_color, floor_color: @floor_color, light: @light, action: "New"} %>
 
-   <%= f.label :name %>
-   <%= f.text_field :name %> <br>
- 
-   <%= f.label :wall_color %>
-   <%= f.text_field :wall_color %> <br>
-
-   <%= f.label :floor_color %>
-   <%= f.text_field :floor_color %> <br>
-
-   <%= f.label :light %>
-   <%= f.text_field :light %> <br>
-
-   <%= f.hidden_field :designer_id, :value => session[:designer_id] %>
-
-   <%= f.submit %>
-
-<% end %>
