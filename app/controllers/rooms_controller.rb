@@ -1,7 +1,8 @@
 class RoomsController < ApplicationController
    
    def index 
-         @rooms = current_designer.rooms.all
+      @designer = Designer.find(session[:designer_id])
+      @rooms = @designer.rooms
    end
 
    def new 
