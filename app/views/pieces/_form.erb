@@ -1,0 +1,22 @@
+<%= form_for @piece do |f| %>
+
+   <%= f.label :name %>
+   <%= f.text_field :name %> <br>
+ 
+   <%= f.label :category %>
+   <%= f.text_field :category %> <br>
+
+   <%= f.label :style %>
+   <%= f.text_field :style %> <br>
+
+   <%= f.label :quantity %>
+   <%= f.text_field :quantity %> <br>
+
+   <%= fields_for @room %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+   <% end %>
+ 
+   <%= f.submit %>
+
+<% end %>
