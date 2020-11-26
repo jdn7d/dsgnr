@@ -1,3 +1,7 @@
 <h1> <%= @room.name %> </h1>
 
+<h2> <%= @room.wall_color%> walls </h2>
+<h2> <%= @room.floor_color%> floors </h2>
+<h2> <%= @room.light%> lighting </h2> 
+
 <%= link_to "Edit Room", edit_room_path(@room) %> 

@@ -12,6 +12,8 @@
    <%= f.label :light %>
    <%= f.text_field :light %> <br>
 
+    <%= f.hidden_field :designer_id, :value => session[:designer_id] %>
+    
    <%= f.submit %>
 
 <% end %>
