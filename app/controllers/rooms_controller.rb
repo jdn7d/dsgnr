@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
    
    def index 
-      @rooms = Room.all
+         @rooms = current_designer.rooms.all
    end
 
    def new 
@@ -9,17 +9,25 @@ class RoomsController < ApplicationController
    end
 
    def create
-     @room = Room.create(room_params)
-     redirect_to room_path(@room)
+      @designer = session[:designer_id]
+      @room = Room.new(room_params)
+     
+      if @room.save
+         redirect_to room_path(@room)
+      else
+        
+         render :new
+      end
    end
 
    def show 
+      @room = Room.find(params[:id])
    end
 
    private
 
    def room_params
-      params.require(:room).permit(:name, :wall_color, :floor_color, :light)
+      params.require(:room).permit(:name, :wall_color, :floor_color, :light, :designer_id)
    end
 
 end
