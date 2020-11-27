@@ -10,7 +10,14 @@ class PiecesController < ApplicationController
    end
 
    def create
-
+      @designer = session[:designer_id]
+      @piece = Piece.new(piece_params)
+     
+      if @piece.save
+         redirect_to piece_path(@piece)
+      else
+         render :new
+      end
    end
 
    def show  

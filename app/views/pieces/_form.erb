@@ -2,21 +2,22 @@
 
    <%= f.label :name %>
    <%= f.text_field :name %> <br>
- 
-   <%= f.label :category %>
-   <%= f.text_field :category %> <br>
 
    <%= f.label :style %>
    <%= f.text_field :style %> <br>
 
    <%= f.label :quantity %>
-   <%= f.text_field :quantity %> <br>
+   <%= f.number_ :quantity %> <br>
 
-   <%= fields_for @room %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-   <% end %>
- 
+   <%= f.label :category %> 
+   <%= f.select :category, options_for_select(["Seating", "Tables", "Storage", "Rugs", "Lighting", "Decor", "Bed",]), include_blank: true %> <br>
+   
+   <%= f.label :room_id %>
+   <%= f.select :room_id, options_from_collection_for_select(Room.all, :id, :name) %> <br>
+
+   <%= f.label :store_id %>
+   <%= f.select :store_id, options_from_collection_for_select(Store.all, :id, :name), include_blank: true %> <br>
+
    <%= f.submit %>
-
+   
 <% end %>
