@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
   get '/logout' => 'sessions#destroy'
 
+  resources :rooms do
+    resources :pieces, only: [:index, :show, :new, :edit]
+  end
     #not neccessary but good for user signs up incorrectly 
       #and needs to be rerouted back to the signup
   resources :sessions

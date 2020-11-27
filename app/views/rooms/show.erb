@@ -5,8 +5,9 @@
 <h2> <%= @room.light%> lighting </h2> 
 
 <%= @room.pieces.each do |piece| %>
-   <li><%= link_to "Add Room", new_room_path(@room) %></li>
+   <li><%= link_to piece.name, room_piece_path(@room, piece) %></li>
 <% end %>
 
-<%= link_to "Add Piece", edit_room_path(@room) %> 
-<%= link_to "Edit Room", edit_room_path(@room) %> 
+<%= link_to "Add a piece", new_room_piece_path(@room) %> <br>
+<%= link_to "Edit Room", edit_room_path(@room) %> <br>
+
