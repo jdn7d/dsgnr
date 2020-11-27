@@ -7,6 +7,8 @@ class PiecesController < ApplicationController
 
    def new
       @piece = Piece.new
+      @room = Room.find_by_id(params[:room_id])
+      @store = Store.find_by_id(params[:store_id])
    end
 
    def create
