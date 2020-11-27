@@ -16,6 +16,7 @@ class PiecesController < ApplicationController
       if @piece.save
          redirect_to piece_path(@piece)
       else
+         binding.pry
          render :new
       end
    end
@@ -34,7 +35,7 @@ class PiecesController < ApplicationController
    end
 
    def piece_params
-      params.require(:piece).permit(:name, :category, :style, :quantity, :room_name, :store_name)
+      params.require(:piece).permit(:name, :category, :style, :quantity, :room_id, :store_id)
    end
 
 end
