@@ -4,4 +4,9 @@
 <h2> <%= @room.floor_color%> floors </h2>
 <h2> <%= @room.light%> lighting </h2> 
 
+<%= @room.pieces.each do |piece| %>
+   <li><%= link_to "Add Room", new_room_path(@room) %></li>
+<% end %>
+
+<%= link_to "Add Piece", edit_room_path(@room) %> 
 <%= link_to "Edit Room", edit_room_path(@room) %> 
