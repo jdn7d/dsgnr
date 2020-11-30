@@ -5,13 +5,8 @@
 <h2> <%= @piece.quantity%> Quantity </h2> 
 
 
-<%= link_to @piece.room.name, room_path(@piece.room) %>
+Room: <%= link_to @piece.room.name, room_path(@piece.room) %>  <br>
 
-<%= link_to @piece.store.name, store_path(@piece.store) %>
+Store: <%= link_to @piece.store.name, store_path(@piece.store) %> <br>
 
-
-
-
-
-<%= link_to "Add a piece", new_room_piece_path(@piece) %> <br>
-<%= link_to "Edit Room", edit_room_path(@piece) %> <br>
+<%= link_to "Edit Piece", edit_piece_path(@piece) %> <br>

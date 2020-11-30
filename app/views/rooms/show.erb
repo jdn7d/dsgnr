@@ -4,7 +4,7 @@
 <h2> <%= @room.floor_color%> floors </h2>
 <h2> <%= @room.light%> lighting </h2> 
 
-<%= @room.pieces.each do |piece| %>
+<% @room.pieces.each do |piece| %>
    <li><%= link_to piece.name, room_piece_path(@room, piece) %></li>
 <% end %>
 
