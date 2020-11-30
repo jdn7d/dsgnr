@@ -12,7 +12,7 @@
    <%= f.label :category %> 
    <%= f.select :category, options_for_select(["Seating", "Tables", "Storage", "Rugs", "Lighting", "Decor", "Bed",]), include_blank: true %> <br>
    
-   <% if @room.id %>
+   <% if @room %>
       <%= f.hidden_field :room_id, :value => @room.id %>
    <% else %>
       <%= f.label :room_id %>

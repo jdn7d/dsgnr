@@ -1,0 +1,7 @@
+<h1> Edit <%= @piece.name %> </h1>
+
+<%= render partial: "form", locals: {name: @name, category: @category, style: @style, quantity: @quantity, room_id: @room_id, store_id: @store_id, action: "Edit"} %>
+
+<%= button_to "Delete Piece",  piece_path(@piece), method: :delete %> <br>
+
+<%= link_to "Cancel", piece_path(@piece) %>
