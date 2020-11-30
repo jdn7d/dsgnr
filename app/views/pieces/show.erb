@@ -1,0 +1,17 @@
+<h1> <%= @piece.name %> </h1>
+
+<h2> <%= @piece.category%> Category </h2>
+<h2> <%= @piece.style%> Style </h2>
+<h2> <%= @piece.quantity%> Quantity </h2> 
+
+
+<%= link_to @piece.room.name, room_path(@piece.room) %>
+
+<%= link_to @piece.store.name, store_path(@piece.store) %>
+
+
+
+
+
+<%= link_to "Add a piece", new_room_piece_path(@piece) %> <br>
+<%= link_to "Edit Room", edit_room_path(@piece) %> <br>

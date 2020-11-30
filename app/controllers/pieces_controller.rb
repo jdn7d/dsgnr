@@ -22,7 +22,8 @@ class PiecesController < ApplicationController
       end
    end
 
-   def show  
+   def show 
+      @piece = Piece.find(params[:id]) 
    end
 
    def edit
