@@ -13,11 +13,12 @@ class PiecesController < ApplicationController
 
    def create
       @designer = session[:designer_id]
+      @room = Room.find_by_id(params[:room_id])
       @piece = Piece.new(piece_params)
-     
       if @piece.save
          redirect_to piece_path(@piece)
       else
+         binding.pry
          render :new
       end
    end
