@@ -11,7 +11,7 @@ class ReferencePhotosController < ApplicationController
       @reference_photos = ReferencePhoto.find_by_id(params[:reference_photos_id])
       @designer = Designer.find(session[:designer_id])
       @reference_photos = @designer.reference_photos
-      @store = Store.find_by_id(params[:store_id])
+      @room = Room.find_by_id(params[:store_id])
    end
 
    def create

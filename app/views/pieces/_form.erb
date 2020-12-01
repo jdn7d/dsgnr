@@ -11,13 +11,29 @@
 
    <%= f.label :category %> 
    <%= f.select :category, options_for_select(["Seating", "Tables", "Storage", "Rugs", "Lighting", "Decor", "Bed",]), include_blank: true %> <br>
-   
+
    <% if @room %>
       <%= f.hidden_field :room_id, :value => @room.id %>
-   <% else %>
+
+   <% elsif @piece.name %>
       <%= f.label :room_id %>
       <%= f.select :room_id, options_from_collection_for_select(@rooms, :id, :name, @piece.room.id.to_i) %> <br>
+   <%else %>
+      <%= f.label :room_id %>
+      <%= f.select :room_id, options_from_collection_for_select(@rooms, :id, :name) %> <br>
    <% end %>
+
+   <% if @store %>
+      <%= f.hidden_field :store_id, :value => @store.id %>
+   <% elsif @piece.name %>
+      <%= f.label :store %>
+      <%= f.select :store_id, options_from_collection_for_select(@stores, :id, :name, @piece.store.id.to_i) %> <br>
+   <% else %>
+      <%= f.label :store %>
+      <%= f.select :store_id, options_from_collection_for_select(@store, :id, :name) %> <br>
+   <% end %>
+
+   
 
    <%= f.label :store_id %>
    <%= f.select :store_id, options_from_collection_for_select(Store.all, :id, :name), include_blank: true %> <br>
