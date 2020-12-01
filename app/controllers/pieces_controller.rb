@@ -8,6 +8,8 @@ class PiecesController < ApplicationController
    def new
       @piece = Piece.new
       @room = Room.find_by_id(params[:room_id])
+      @designer = Designer.find(session[:designer_id])
+      @rooms = @designer.rooms
       @store = Store.find_by_id(params[:store_id])
    end
 
@@ -23,10 +25,13 @@ class PiecesController < ApplicationController
    end
 
    def show 
+      @designer = Designer.find(session[:designer_id])
+      @rooms = @designer.rooms
       @piece = Piece.find(params[:id]) 
    end
 
    def edit
+      
       @piece = Piece.find(params[:id]) 
    end
 
