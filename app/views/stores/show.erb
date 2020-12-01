@@ -1,12 +1,11 @@
 <h1> <%= @store.name %> </h1>
 
-<h2> <%= @store.location%> walls </h2>
-<h2> <%= @store.link%> floors </h2>
-<h2> <%= @store.price%> lighting </h2> 
+<h2> <%= @store.location%> location </h2>
+<h2> <%= @store.link%> link to site</h2>
 
-<%= @store.pieces.each do |piece| %>
+All saved pieces at this store
+<% @store.pieces.each do |piece| %>
    <li><%= link_to piece.name, store_piece_path(@store, piece) %></li>
 <% end %>
 
-<%= link_to "Add a piece", new_store_piece_path(@store) %> <br>
 <%= link_to "Edit store", edit_store_path(@store) %> <br>

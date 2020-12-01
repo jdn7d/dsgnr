@@ -20,8 +20,8 @@
    <% end %>
 
    <%= f.label :store_id %>
-   <%= f.select :store_id, options_from_collection_for_select(Store.all, :id, :name, @piece.store.id.to_i), include_blank: true %> <br>
-   
+   <%= f.select :store_id, options_from_collection_for_select(Store.all, :id, :name), include_blank: true %> <br>
+  
 
    <%= f.submit %>
    
