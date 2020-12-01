@@ -3,7 +3,7 @@
 <h2> <%= @store.location%> location </h2>
 <h2> <%= @store.link%> link to site</h2>
 
-All saved pieces at this store
+All saved pieces at this store <br>
 <% @store.pieces.each do |piece| %>
    <li><%= link_to piece.name, store_piece_path(@store, piece) %></li>
 <% end %>
