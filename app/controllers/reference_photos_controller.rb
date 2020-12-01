@@ -1,7 +1,7 @@
 class ReferencePhotosController < ApplicationController
    
    def index 
-      @designer = Designer.find(session[:designer_id])
+     @designer = Designer.find(session[:designer_id])
      # @reference_photos = @designer.reference_photos
      @reference_photos = ReferencePhoto.all
    end
