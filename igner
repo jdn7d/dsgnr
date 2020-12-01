@@ -1,0 +1,12 @@
+
+[1mFrom:[0m /mnt/c/Users/jdn7d/dsgnr/app/controllers/reference_photos_controller.rb:13 ReferencePhotosController#new:
+
+     [1;34m9[0m: [32mdef[0m [1;34mnew[0m
+    [1;34m10[0m:    @reference_photo = [1;34;4mReferencePhoto[0m.new
+    [1;34m11[0m:    @reference_photos = [1;34;4mReferencePhoto[0m.find_by_id(params[[33m:reference_photos_id[0m])
+    [1;34m12[0m:    @designer = [1;34;4mDesigner[0m.find(session[[33m:designer_id[0m])
+ => [1;34m13[0m:    binding.pry
+    [1;34m14[0m:    @reference_photos = @designer.rooms.reference_photos
+    [1;34m15[0m:    @store = [1;34;4mStore[0m.find_by_id(params[[33m:store_id[0m])
+    [1;34m16[0m: [32mend[0m
+

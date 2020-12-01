@@ -3,14 +3,14 @@ class ReferencePhotosController < ApplicationController
    def index 
      @designer = Designer.find(session[:designer_id])
      # @reference_photos = @designer.reference_photos
-     @reference_photos = ReferencePhoto.all
+     @reference_photos = @designer.reference_photos    
    end
 
    def new
       @reference_photo = ReferencePhoto.new
       @reference_photos = ReferencePhoto.find_by_id(params[:reference_photos_id])
       @designer = Designer.find(session[:designer_id])
-      @reference_photoss = @designer.reference_photoss
+      @reference_photos = @designer.reference_photos
       @store = Store.find_by_id(params[:store_id])
    end
 

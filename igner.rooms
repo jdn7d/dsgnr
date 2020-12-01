@@ -1,0 +1,18 @@
+=> [[32m#<Room:0x00007f18ccdf1f60[0m
+  id: [1;34m7[0m,
+  name: [31m[1;31m"[0m[31mKitchen[1;31m"[0m[31m[0m,
+  wall_color: [31m[1;31m"[0m[31mBlue[1;31m"[0m[31m[0m,
+  floor_color: [31m[1;31m"[0m[31mGray Tile[1;31m"[0m[31m[0m,
+  light: [31m[1;31m"[0m[31mTrack Lighting[1;31m"[0m[31m[0m,
+  designer_id: [1;34m6[0m,
+  created_at: [1;34;4mMon[0m, [1;34m30[0m [1;34;4mNov[0m [1;34m2020[0m [1;34m20[0m:[1;34m47[0m:[1;34m25[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mMon[0m, [1;34m30[0m [1;34;4mNov[0m [1;34m2020[0m [1;34m22[0m:[1;34m24[0m:[1;34m44[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m,
+ [32m#<Room:0x00007f18cce4a2f0[0m
+  id: [1;34m8[0m,
+  name: [31m[1;31m"[0m[31mLiving Room[1;31m"[0m[31m[0m,
+  wall_color: [31m[1;31m"[0m[31mGreen[1;31m"[0m[31m[0m,
+  floor_color: [31m[1;31m"[0m[31mWooden[1;31m"[0m[31m[0m,
+  light: [31m[1;31m"[0m[31mBay window[1;31m"[0m[31m[0m,
+  designer_id: [1;34m6[0m,
+  created_at: [1;34;4mMon[0m, [1;34m30[0m [1;34;4mNov[0m [1;34m2020[0m [1;34m22[0m:[1;34m25[0m:[1;34m07[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mMon[0m, [1;34m30[0m [1;34;4mNov[0m [1;34m2020[0m [1;34m22[0m:[1;34m25[0m:[1;34m07[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m]
