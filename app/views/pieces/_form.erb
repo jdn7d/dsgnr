@@ -23,14 +23,16 @@
       <%= f.select :room_id, options_from_collection_for_select(@rooms, :id, :name) %> <br>
    <% end %>
 
+
    <% if @store %>
       <%= f.hidden_field :store_id, :value => @store.id %>
+
    <% elsif @piece.name %>
-      <%= f.label :store %>
+      <%= f.label :store_id %>
       <%= f.select :store_id, options_from_collection_for_select(@stores, :id, :name, @piece.store.id.to_i) %> <br>
    <% else %>
-      <%= f.label :store %>
-      <%= f.select :store_id, options_from_collection_for_select(@store, :id, :name) %> <br>
+      <%= f.label :store_id %>
+      <%= f.select :store_id, options_from_collection_for_select(@stores, :id, :name) %> <br>
    <% end %>
 
    

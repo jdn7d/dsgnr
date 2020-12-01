@@ -10,6 +10,7 @@ class PiecesController < ApplicationController
       @room = Room.find_by_id(params[:room_id])
       @designer = Designer.find(session[:designer_id])
       @rooms = @designer.rooms
+      @stores = @designer.stores
       @store = Store.find_by_id(params[:store_id])
    end
 
