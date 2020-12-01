@@ -31,7 +31,8 @@ class PiecesController < ApplicationController
    end
 
    def edit
-      
+      @designer = Designer.find(session[:designer_id])
+      @rooms = @designer.rooms
       @piece = Piece.find(params[:id]) 
    end
 
