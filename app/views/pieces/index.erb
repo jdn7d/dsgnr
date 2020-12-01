@@ -1,7 +1,7 @@
 <h1> All Pieces </h2>
 
 <% @pieces.each do |piece| %>
-   <%= link_to piece.name, piece_path(piece) %> <br>
+   <li> <%= link_to piece.name, piece_path(piece) %> </li> <br>
 <% end %>
 
 <%= link_to "Add Piece", new_piece_path(@piece) %> 

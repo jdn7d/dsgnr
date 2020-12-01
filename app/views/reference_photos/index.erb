@@ -1,0 +1,7 @@
+<h1> All Reference Photos </h2>
+
+<% @Reference_photos.each do |photo| %>
+   <li> <%= link_to Reference_photo.name, reference_photo_path(photo) %> </li> <br>
+<% end %>
+
+<%= link_to "Add Piece", new_piece_path(@piece) %> 
