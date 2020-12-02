@@ -36,7 +36,7 @@ class PiecesController < ApplicationController
       @rooms = @designer.rooms
       @stores = @designer.stores
       @piece = Piece.find(params[:id]) 
-      
+
    end
 
    def update  

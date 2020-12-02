@@ -11,12 +11,13 @@ class ReferencePhotosController < ApplicationController
       @reference_photos = ReferencePhoto.find_by_id(params[:reference_photos_id])
       @designer = Designer.find(session[:designer_id])
       @reference_photos = @designer.reference_photos
+      @rooms = @designer.rooms
       @room = Room.find_by_id(params[:store_id])
    end
 
    def create
       @designer = session[:designer_id]
-      @reference_photos = ReferencePhoto.find_by_id(params[:reference_photos_id])
+      @room = Room.find_by_id(params[:room_id])
       @reference_photo = ReferencePhoto.new(reference_photo_params)
       if @reference_photo.save
          redirect_to reference_photo_path(@reference_photo)
@@ -50,6 +51,6 @@ class ReferencePhotosController < ApplicationController
    end
 
    def reference_photo_params
-      params.require(:reference_photo).permit(:name, :category, :style, :quantity, :reference_photos_id, :store_id)
+      params.require(:reference_photo).permit(:link, :room_id)
    end
 end
