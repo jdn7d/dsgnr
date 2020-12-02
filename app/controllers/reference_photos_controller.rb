@@ -34,7 +34,7 @@ class ReferencePhotosController < ApplicationController
 
    def edit
       @designer = Designer.find(session[:designer_id])
-      @reference_photoss = @designer.reference_photoss
+      @reference_photoss = @designer.reference_photos
       @reference_photo = ReferencePhoto.find(params[:id]) 
    end
 
