@@ -40,7 +40,7 @@ class ReferencePhotosController < ApplicationController
    end
 
    def update  
-      @reference_photo = reference_photo.find(params[:id])
+      @reference_photo = ReferencePhoto.find(params[:id])
       @reference_photo.update(reference_photo_params)
       redirect_to '/reference_photos'
    end
