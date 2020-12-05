@@ -4,5 +4,5 @@ class Designer < ApplicationRecord
    has_many :reference_photos, through: :rooms
    has_many :stores, through: :pieces
    has_secure_password
-   #authenticate method, validate password
+  
 end

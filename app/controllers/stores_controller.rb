@@ -3,7 +3,8 @@ class StoresController < ApplicationController
    before_action :find_store, only: [:show, :edit, :update, :destroy]
 
    def index 
-      @stores = current_designer.stores
+      @stores = Store.all
+      
    end
 
    def new 
@@ -11,11 +12,13 @@ class StoresController < ApplicationController
    end
 
    def create
-      
+
       @store = Store.new(store_params)
       
       if @store.save
+         
          redirect_to store_path(@store)
+         
       else
          render :new
       end

@@ -13,7 +13,7 @@ class PiecesController < ApplicationController
       @store = Store.find_by_id(params[:store_id])
 
       @rooms = current_designer.rooms
-      @stores = current_designer.stores
+      @stores = Store.all
  
    end
 
@@ -22,10 +22,10 @@ class PiecesController < ApplicationController
 
       @room = Room.find_by_id(params[:room_id])
       @piece = Piece.new(piece_params)
-     
       if @piece.save
          redirect_to piece_path(@piece)
       else
+         binding.pry
          render :new
       end
    end
