@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/signup' => 'designers#new'
   post '/signup' => 'designers#create'
 
+  get '/auth/google/callback' => 'sessions#create'
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
 

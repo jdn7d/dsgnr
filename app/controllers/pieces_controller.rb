@@ -2,7 +2,7 @@ class PiecesController < ApplicationController
    
    def index 
       @designer = Designer.find(session[:designer_id])
-      @pieces = @designer.pieces
+      @pieces = current_designer.pieces
    end
 
    def new
@@ -27,7 +27,7 @@ class PiecesController < ApplicationController
 
    def show 
       @designer = Designer.find(session[:designer_id])
-      @rooms = @designer.rooms
+      @rooms = designer.rooms
       @piece = Piece.find(params[:id]) 
    end
 

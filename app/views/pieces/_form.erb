@@ -35,12 +35,6 @@
       <%= f.select :store_id, options_from_collection_for_select(@stores, :id, :name) %> <br>
    <% end %>
 
-   
-
-   <%= f.label :store_id %>
-   <%= f.select :store_id, options_from_collection_for_select(Store.all, :id, :name), include_blank: true %> <br>
-  
-
    <%= f.submit %>
    
 <% end %>

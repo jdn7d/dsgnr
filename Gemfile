@@ -6,6 +6,8 @@ ruby '2.6.1'
 gem 'bcrypt', '~> 3.1.7'
 gem 'pry'
 gem 'byebug'
+gem 'omniauth'
+gem 'omniauth-google'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use sqlite3 as the database for Active Record

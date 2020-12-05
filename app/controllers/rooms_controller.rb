@@ -1,5 +1,7 @@
 class RoomsController < ApplicationController
    
+   before_action :find_room, only: [:show, :edit, :update, :destroy]
+
    def index 
       @designer = Designer.find(session[:designer_id])
       @rooms = @designer.rooms
@@ -42,6 +44,10 @@ class RoomsController < ApplicationController
 
    private
 
+   def find_room
+      @room = Room.find(params[:id])
+   end
+   
    def room_params
       params.require(:room).permit(:name, :wall_color, :floor_color, :light, :designer_id)
    end
