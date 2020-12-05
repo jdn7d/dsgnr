@@ -30,27 +30,28 @@ class PiecesController < ApplicationController
    def show 
       @designer = Designer.find(session[:designer_id])
       @rooms = designer.rooms
-      @piece = Piece.find(params[:id]) 
    end
 
    def edit
       @designer = Designer.find(session[:designer_id])
       @rooms = @designer.rooms
       @stores = @designer.stores
-      @piece = Piece.find(params[:id]) 
-
    end
 
    def update  
-      @piece = Piece.find(params[:id])
       @piece.update(piece_params)
       redirect_to '/pieces'
    end
 
    def destroy 
-      @piece = Piece.find(params[:id])
       @piece.destroy
       redirect_to '/pieces'
+   end
+
+   private
+
+   def find_piece
+       @piece = Piece.find(params[:id])
    end
 
    def piece_params
