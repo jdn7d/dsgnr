@@ -1,5 +1,7 @@
 class PiecesController < ApplicationController
    
+   before_action :find_piece, only: [:show, :edit, :update, :destroy]
+   
    def index 
       @designer = Designer.find(session[:designer_id])
       @pieces = current_designer.pieces
