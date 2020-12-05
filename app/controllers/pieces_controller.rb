@@ -29,7 +29,7 @@ class PiecesController < ApplicationController
 
    def show 
       @designer = Designer.find(session[:designer_id])
-      @rooms = designer.rooms
+      @rooms = current_designer.rooms
    end
 
    def edit

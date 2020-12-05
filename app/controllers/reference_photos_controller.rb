@@ -1,4 +1,6 @@
 class ReferencePhotosController < ApplicationController
+      
+   before_action :find_reference_photos, only: [:show, :edit, :update, :destroy]
    
    def index 
      @designer = Designer.find(session[:designer_id])
@@ -49,6 +51,12 @@ class ReferencePhotosController < ApplicationController
       @reference_photo = ReferencePhoto.find(params[:id])
       @reference_photo.destroy
       redirect_to '/reference_photos'
+   end
+
+   private
+
+   def find_reference_photos
+      @reference_photos = ReferencePhoto.find_by_id(params[:reference_photos_id])
    end
 
    def reference_photo_params
