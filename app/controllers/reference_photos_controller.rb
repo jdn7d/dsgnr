@@ -4,7 +4,6 @@ class ReferencePhotosController < ApplicationController
    
    def index 
      @designer = Designer.find(session[:designer_id])
-     # @reference_photos = @designer.reference_photos
      @reference_photos = @designer.reference_photos    
    end
 
@@ -30,25 +29,21 @@ class ReferencePhotosController < ApplicationController
 
    def show 
       @designer = Designer.find(session[:designer_id])
-      @reference_photoss = @designer.reference_photos
-      @reference_photo = ReferencePhoto.find(params[:id]) 
+      @reference_photoss = @designer.reference_photos 
    end
 
    def edit
       @designer = Designer.find(session[:designer_id])
       @rooms = @designer.rooms
       @reference_photoss = @designer.reference_photos
-      @reference_photo = ReferencePhoto.find(params[:id]) 
    end
 
    def update  
-      @reference_photo = ReferencePhoto.find(params[:id])
       @reference_photo.update(reference_photo_params)
       redirect_to '/reference_photos'
    end
 
    def destroy 
-      @reference_photo = ReferencePhoto.find(params[:id])
       @reference_photo.destroy
       redirect_to '/reference_photos'
    end
@@ -56,7 +51,7 @@ class ReferencePhotosController < ApplicationController
    private
 
    def find_reference_photos
-      @reference_photos = ReferencePhoto.find_by_id(params[:reference_photos_id])
+      @reference_photos = ReferencePhoto.find(params[:id])
    end
 
    def reference_photo_params
