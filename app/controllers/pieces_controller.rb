@@ -3,17 +3,17 @@ class PiecesController < ApplicationController
    before_action :find_piece, only: [:show, :edit, :update, :destroy]
    
    def index 
-      @designer = Designer.find(session[:designer_id])
       @pieces = current_designer.pieces
    end
 
    def new
       @piece = Piece.new
       @room = Room.find_by_id(params[:room_id])
-      @designer = Designer.find(session[:designer_id])
-      @rooms = @designer.rooms
-      @stores = @designer.stores
       @store = Store.find_by_id(params[:store_id])
+
+      @rooms = current_designer.rooms
+      @stores = current_designer.stores
+ 
    end
 
    def create
@@ -28,14 +28,12 @@ class PiecesController < ApplicationController
    end
 
    def show 
-      @designer = Designer.find(session[:designer_id])
       @rooms = current_designer.rooms
    end
 
    def edit
-      @designer = Designer.find(session[:designer_id])
-      @rooms = @designer.rooms
-      @stores = @designer.stores
+      @rooms = current_designer.rooms
+      @stores = current_designer.stores
    end
 
    def update  
