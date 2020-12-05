@@ -22,7 +22,7 @@ class PiecesController < ApplicationController
 
       @room = Room.find_by_id(params[:room_id])
       @piece = Piece.new(piece_params)
-      
+     
       if @piece.save
          redirect_to piece_path(@piece)
       else
@@ -56,7 +56,7 @@ class PiecesController < ApplicationController
    end
 
    def piece_params
-      params.require(:piece).permit(:name, :category, :style, :quantity, :room_id, :store_id)
+      params.require(:piece).permit(:name, :category, :style, :quantity, :room_id)
    end
 
 end

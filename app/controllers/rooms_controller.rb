@@ -11,7 +11,6 @@ class RoomsController < ApplicationController
    end
 
    def create
-    
       @room = Room.new(room_params)
      
       if @room.save
@@ -19,9 +18,6 @@ class RoomsController < ApplicationController
       else
          render :new
       end
-   end
-
-   def show
    end
 
    def update 
