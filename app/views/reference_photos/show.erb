@@ -1,6 +1,6 @@
-<h1> <%= @reference_photo.link %> </h1>
+<h1> <%= @reference_photo%> </h1>
 
 
-Room: <%= link_to @reference_photo.room.name, reference_photo_path(@reference_photo.room) %>  <br>
+Room: <%= link_to @reference_photo.room.name, room_path(@reference_photo.room) %>  <br>
 
 <%= link_to "Edit Reference Photo", edit_reference_photo_path(@reference_photo) %> <br>
