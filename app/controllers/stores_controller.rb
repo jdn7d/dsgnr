@@ -1,7 +1,8 @@
 class StoresController < ApplicationController
 
-  def index 
-     # @designer = Designer.find(session[:designer_id])
+   before_action :find_store, only: [:show, :edit, :update, :destroy]
+
+   def index 
       @stores = Store.all
    end
 
@@ -10,7 +11,6 @@ class StoresController < ApplicationController
    end
 
    def create
-    #  @designer = session[:designer_id]
       @store = Store.new(store_params)
      
       if @store.save
@@ -41,6 +41,10 @@ class StoresController < ApplicationController
    end
 
    private
+
+   def find_store
+      @store = Store.find(params[:id])
+   end
 
    def store_params
       params.require(:store).permit(:name, :location, :link, :price)

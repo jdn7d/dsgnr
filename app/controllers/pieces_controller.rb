@@ -8,6 +8,7 @@ class PiecesController < ApplicationController
 
    def new
       @piece = Piece.new
+
       @room = Room.find_by_id(params[:room_id])
       @store = Store.find_by_id(params[:store_id])
 
@@ -17,9 +18,11 @@ class PiecesController < ApplicationController
    end
 
    def create
-      @designer = session[:designer_id]
+      current_designer
+
       @room = Room.find_by_id(params[:room_id])
       @piece = Piece.new(piece_params)
+      
       if @piece.save
          redirect_to piece_path(@piece)
       else
