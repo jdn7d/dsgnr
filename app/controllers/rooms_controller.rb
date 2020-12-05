@@ -11,7 +11,7 @@ class RoomsController < ApplicationController
    end
 
    def create
-      @designer = session[:designer_id]
+    
       @room = Room.new(room_params)
      
       if @room.save
