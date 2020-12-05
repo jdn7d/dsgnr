@@ -3,8 +3,7 @@ class RoomsController < ApplicationController
    before_action :find_room, only: [:show, :edit, :update, :destroy]
 
    def index 
-      @designer = Designer.find(session[:designer_id])
-      @rooms = @designer.rooms
+      @rooms = current_designer.rooms
    end
 
    def new 
@@ -20,6 +19,9 @@ class RoomsController < ApplicationController
       else
          render :new
       end
+   end
+
+   def show
    end
 
    def update 

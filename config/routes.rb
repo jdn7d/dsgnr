@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   resources :rooms do
     resources :pieces
   end
+  resources :rooms do
+    resources :reference_photos
+  end
 
   resources :stores
   resources :stores do

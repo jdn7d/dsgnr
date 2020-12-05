@@ -3,7 +3,7 @@ class StoresController < ApplicationController
    before_action :find_store, only: [:show, :edit, :update, :destroy]
 
    def index 
-      @stores = Store.all
+      @stores = current_designer.stores
    end
 
    def new 
