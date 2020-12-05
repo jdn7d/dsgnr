@@ -8,6 +8,10 @@
    <li><%= link_to piece.name, room_piece_path(@room, piece) %></li>
 <% end %>
 
+<% @room.reference_photos.each do |room| %>
+   <li><%= link_to "photos", room_reference_photo_path(@room, reference_photo) %></li>
+<% end %>
+
 <%= link_to "Add a piece", new_room_piece_path(@room) %> <br>
 <%= link_to "Edit Room", edit_room_path(@room) %> <br>
 
