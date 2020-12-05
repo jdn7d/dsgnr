@@ -3,16 +3,15 @@ class ReferencePhotosController < ApplicationController
    before_action :find_reference_photos, only: [:show, :edit, :update, :destroy]
    
    def index 
-     @designer = Designer.find(session[:designer_id])
-     @reference_photos = @designer.reference_photos    
+     @reference_photos = current_designer.reference_photos    
    end
 
    def new
       @reference_photo = ReferencePhoto.new
       @reference_photos = ReferencePhoto.find_by_id(params[:reference_photos_id])
-      @designer = Designer.find(session[:designer_id])
-      @reference_photos = @designer.reference_photos
-      @rooms = @designer.rooms
+      
+      @reference_photos = current_designer.reference_photos 
+      @rooms = current_designer.rooms
       @room = Room.find_by_id(params[:store_id])
    end
 
@@ -28,14 +27,12 @@ class ReferencePhotosController < ApplicationController
    end
 
    def show 
-      @designer = Designer.find(session[:designer_id])
-      @reference_photoss = @designer.reference_photos 
+      @reference_photoss = current_designer.reference_photos 
    end
 
    def edit
-      @designer = Designer.find(session[:designer_id])
-      @rooms = @designer.rooms
-      @reference_photoss = @designer.reference_photos
+      @rooms = current_designer.rooms
+      @reference_photoss = current_designer.reference_photos
    end
 
    def update  
