@@ -1,3 +1,5 @@
+ <%= render partial: "partials/error_messages", locals: { object: @room } %>
+
 <%= form_for @room do |f| %>
 
    <%= f.label :name %>
