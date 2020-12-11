@@ -1,0 +1,16 @@
+
+[1mFrom:[0m /mnt/c/Users/jdn7d/dsgnr/app/controllers/pieces_controller.rb:28 PiecesController#create:
+
+    [1;34m20[0m: [32mdef[0m [1;34mcreate[0m
+    [1;34m21[0m:    current_designer
+    [1;34m22[0m: 
+    [1;34m23[0m:    @room = [1;34;4mRoom[0m.find_by_id(params[[33m:room_id[0m])
+    [1;34m24[0m:    @piece = [1;34;4mPiece[0m.new(piece_params)
+    [1;34m25[0m:    [32mif[0m @piece.save
+    [1;34m26[0m:       redirect_to piece_path(@piece)
+    [1;34m27[0m:    [32melse[0m
+ => [1;34m28[0m:       binding.pry
+    [1;34m29[0m:       render [33m:new[0m
+    [1;34m30[0m:    [32mend[0m
+    [1;34m31[0m: [32mend[0m
+

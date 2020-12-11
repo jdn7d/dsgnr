@@ -4,15 +4,16 @@ class StoresController < ApplicationController
 
    def index 
       @stores = Store.all
-      
+      #scope method 
    end
 
    def new 
       @store = Store.new
+      
    end
 
    def create
-
+      #find or create by method OR validation for unique name 
       @store = Store.new(store_params)
       
       if @store.save
@@ -22,6 +23,12 @@ class StoresController < ApplicationController
       else
          render :new
       end
+   end
+
+   def show
+
+      @pieces = @store.pieces.where(designer_id: current_designer.id)
+
    end
 
    def update
