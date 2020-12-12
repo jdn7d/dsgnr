@@ -1,12 +1,8 @@
 class SessionsController < ApplicationController
 
-   def new
-   end
-
    def create 
       @designer = Designer.find_by_email(params[:email])
    
-
       if @designer && @designer.authenticate(params[:password])
          session[:designer_id] = @designer.id
          redirect_to designer_path(@designer)
@@ -33,7 +29,7 @@ class SessionsController < ApplicationController
       redirect_to designer_path(@designer)
    end
 
-    private
+   private
  
    def auth
       request.env['omniauth.auth']
