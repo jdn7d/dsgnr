@@ -29,10 +29,6 @@ class ReferencePhotosController < ApplicationController
       end
    end
 
-   def show 
-      @designer = Designer.find(session[:designer_id])
-  end
-
    def edit
       @rooms = current_designer.rooms
       @stores = current_designer.stores
