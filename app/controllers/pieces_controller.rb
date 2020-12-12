@@ -12,8 +12,6 @@ class PiecesController < ApplicationController
 
       @room = Room.find_by_id(params[:room_id])
       @store = Store.find_by_id(params[:store_id])
-
-      @rooms = current_designer.rooms
       @stores = Store.all
  
    end
@@ -27,18 +25,15 @@ class PiecesController < ApplicationController
       if @piece.save
          redirect_to piece_path(@piece)
       else
-         @rooms = current_designer.rooms
          @stores = Store.all
          render :new
       end
    end
 
    def show 
-      @rooms = current_designer.rooms
    end
 
    def edit
-      @rooms = current_designer.rooms
       @stores = current_designer.stores
    end
 
