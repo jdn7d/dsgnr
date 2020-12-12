@@ -1,5 +1,5 @@
 class Room < ApplicationRecord
-    validates :name, uniqueness: true, presence: true
+    validates :name, presence: true
 
     belongs_to :designer
     has_many :reference_photos, dependent: :destroy

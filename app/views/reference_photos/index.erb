@@ -2,6 +2,8 @@
 
 <% @reference_photos.each do |photo| %>
    <li> <%= link_to photo.link, reference_photo_path(photo) %> </li> <br>
+   <li> <%= image_tag photo.link %>
+</li>
 <% end %>
 
 <%= link_to "Add Photo", new_reference_photo_path(@reference_photo) %> 

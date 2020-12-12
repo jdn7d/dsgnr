@@ -1,5 +1,6 @@
 <h1> <%= @reference_photo%> </h1>
-
+photo
+<%= image_tag @reference_photo.link %>
 
 Room: <%= link_to @reference_photo.room.name, room_path(@reference_photo.room) %>  <br>
 
