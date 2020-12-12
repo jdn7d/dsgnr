@@ -22,8 +22,8 @@ class SessionsController < ApplicationController
       designer_email = request.env['omniauth.auth']['info']['email']
       designer_username = request.env['omniauth.auth']['info']['name']
       @designer = Designer.find_or_create_by(email: designer_email) do |designer|
-      @designer.username = designer_username
-      @designer.password = SecureRandom.hex
+         @designer.username = designer_username
+         @designer.password = SecureRandom.hex
       end
       session[:designer_id] = @designer.id
       redirect_to designer_path(@designer)
