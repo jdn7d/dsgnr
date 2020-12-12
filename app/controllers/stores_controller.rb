@@ -26,9 +26,9 @@ class StoresController < ApplicationController
    end
 
    def show
-      @pieces = Store.current_designers_rooms
-     # @pieces = @store.pieces.where(designer_id: current_designer.id)
-
+      @pieces = current_designer.pieces.current_store_pieces(@store)
+      # @pieces = @store.pieces.where(designer_id: current_designer.id)
+      
    end
 
    def update

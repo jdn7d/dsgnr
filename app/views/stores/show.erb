@@ -4,8 +4,8 @@
 <h2> <%= @store.link%> link to site</h2>
 
 All saved pieces at this store <br>
-<%# <% @pieces.each do |piece| %>
-<%#   <li><%= link_to piece.name, store_piece_path(@store, piece) %></li>
-<%#<% end %>
+<% @pieces.each do |piece| %>
+   <li><%= link_to piece.name, store_piece_path(@store, piece) %></li>
+<% end %>
 
 <%= link_to "Edit store", edit_store_path(@store) %> <br>
