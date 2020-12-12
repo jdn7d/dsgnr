@@ -9,7 +9,7 @@ class ReferencePhotosController < ApplicationController
    def new
       @reference_photo = ReferencePhoto.new
 
-      @room = Room.find_by_id(params[:store_id])
+      @room = Room.find_by_id(params[:room_id])
       @store = Store.find_by_id(params[:store_id])
 
       @rooms = current_designer.rooms

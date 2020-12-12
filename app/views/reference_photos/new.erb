@@ -1,4 +1,8 @@
-<h1> Add a new photo! </h1>
+<% if @room %>
+   <h1> Add a new photo to <%= @room.name %>! </h1>
+<% else %>
+   <h1> Add a new photo! </h1>
+<% end %>
 
 <%= render partial: "form", locals: {link: @link, room_id: @room_id, action: "New"} %>
 
