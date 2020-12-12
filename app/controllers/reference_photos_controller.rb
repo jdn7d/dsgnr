@@ -3,7 +3,7 @@ class ReferencePhotosController < ApplicationController
    before_action :find_photo, only: [:show, :edit, :update, :destroy]
 
    def index 
-     @reference_photos = current_designer.reference_photos    
+      @reference_photos = current_designer.reference_photos    
    end
 
    def new
@@ -31,8 +31,7 @@ class ReferencePhotosController < ApplicationController
 
    def show 
       @designer = Designer.find(session[:designer_id])
-      @reference_photo = ReferencePhoto.find(params[:id]) 
-   end
+  end
 
    def edit
       @rooms = current_designer.rooms
