@@ -1,6 +1,7 @@
 class PiecesController < ApplicationController
    
    before_action :find_piece, only: [:show, :edit, :update, :destroy]
+   before_action :find_rooms, only: [:new, :create, :show, :edit]
    
    def index 
       @pieces = current_designer.pieces
@@ -52,6 +53,10 @@ class PiecesController < ApplicationController
    end
 
    private
+
+   def find_rooms
+      @rooms = current_designer.rooms
+   end
 
    def find_piece
        @piece = Piece.find(params[:id])
