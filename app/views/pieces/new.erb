@@ -1,4 +1,9 @@
-<h1> Add a new piece! </h1>
+
+<% if @room %>
+   <h1> Add a new piece to <%= @room.name %>! </h1>
+<% else %>
+   <h1> Add a new piece! </h1>
+<% end %>
 
 <%= render partial: "form", locals: {name: @name, category: @category, style: @style, quantity: @quantity, room_id: @room_id, store_id: @store_id, action: "New"} %>
 

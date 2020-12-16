@@ -1,6 +1,7 @@
 <h1> Edit <%= @room.name %> </h1>
 
 <%= render partial: "form", locals: {room: @room, wall_color: @wall_color, floor_color: @floor_color, light: @light, action: "Edit"} %>
+
 <%= button_to "Delete Room",  room_path(@room), method: :delete %> <br>
 
 <%= link_to "Cancel", room_path(@room) %>
