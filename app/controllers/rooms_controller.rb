@@ -12,7 +12,6 @@ class RoomsController < ApplicationController
 
    def create
       @room = Room.new(room_params)
-     
       if @room.save
          redirect_to room_path(@room)
       else
@@ -22,7 +21,11 @@ class RoomsController < ApplicationController
 
    def update 
       @room.update(room_params) 
-      redirect_to room_path(@room)
+      if @room.update
+         redirect_to room_path(@room)
+      else
+         render :edit
+      end
    end
 
    def destroy 
