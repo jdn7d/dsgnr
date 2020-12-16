@@ -21,7 +21,6 @@ class ReferencePhotosController < ApplicationController
 
       @room = Room.find_by_id(params[:room_id])
       @reference_photo = ReferencePhoto.new(reference_photo_params)
-      
       if @reference_photo.save
          redirect_to reference_photo_path(@reference_photo)
       else
@@ -36,7 +35,11 @@ class ReferencePhotosController < ApplicationController
 
    def update  
       @reference_photo.update(reference_photo_params)
-      redirect_to reference_photo_path(@reference_photo)
+      if @reference_photo.update
+         redirect_to reference_photo_path(@reference_photo)
+      else 
+         render :edit
+      end
    end
 
    def destroy 
