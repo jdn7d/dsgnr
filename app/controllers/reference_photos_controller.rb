@@ -36,7 +36,7 @@ class ReferencePhotosController < ApplicationController
 
    def update  
       @reference_photo.update(reference_photo_params)
-      redirect_to '/reference_photos'
+      redirect_to reference_photo_path(@reference_photo)
    end
 
    def destroy 
