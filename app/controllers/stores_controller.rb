@@ -26,7 +26,11 @@ class StoresController < ApplicationController
 
    def update
       @store.update(store_params) 
-      redirect_to store_path(@store)
+      if @store.update
+         redirect_to store_path(@store)
+      else 
+         render :edit
+      end
    end
 
    def destroy 
