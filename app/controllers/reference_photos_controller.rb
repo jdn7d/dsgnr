@@ -34,8 +34,7 @@ class ReferencePhotosController < ApplicationController
    end
 
    def update  
-      @reference_photo.update(reference_photo_params)
-      if @reference_photo.update
+      if @reference_photo.update(reference_photo_params)
          redirect_to reference_photo_path(@reference_photo)
       else 
          render :edit

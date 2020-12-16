@@ -31,12 +31,11 @@ class PiecesController < ApplicationController
    end
 
    def edit
-      @stores = current_designer.stores
+      @stores = Store.all
    end
 
    def update  
-      @piece.update(piece_params)
-      if @piece.update
+      if @piece.update(piece_params)
          redirect_to piece_path(@piece)
       else
          render :edit 

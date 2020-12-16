@@ -1,8 +1,10 @@
 <h1> <%= @piece.name %> </h1>
 
-<h2> <%= @piece.category%> Category </h2>
-<h2> <%= @piece.style%> Style </h2>
-<h2> <%= @piece.quantity%> Quantity </h2> 
+<h2> Information </h2>
+Category: <%= @piece.category%>  <br>
+Style: <%= @piece.style%>  <br>
+Quantity: <%= @piece.quantity%>  <br>
+
 
 
 Room: <%= link_to @piece.room.name, room_path(@piece.room) %>  <br>

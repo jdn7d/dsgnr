@@ -25,8 +25,7 @@ class StoresController < ApplicationController
    end
 
    def update
-      @store.update(store_params) 
-      if @store.update
+      if @store.update(store_params) 
          redirect_to store_path(@store)
       else 
          render :edit
