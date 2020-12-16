@@ -22,7 +22,7 @@ class RoomsController < ApplicationController
 
    def update 
       @room.update(room_params) 
-      redirect_to '/rooms'
+      redirect_to room_path(@room)
    end
 
    def destroy 
