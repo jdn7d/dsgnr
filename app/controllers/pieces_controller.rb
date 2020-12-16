@@ -23,7 +23,7 @@ class PiecesController < ApplicationController
       @piece = Piece.new(piece_params)
 
       if @piece.save
-         redirect_to piece_path(@piece)
+        
       else
          @stores = Store.all
          render :new
@@ -36,7 +36,7 @@ class PiecesController < ApplicationController
 
    def update  
       @piece.update(piece_params)
-      redirect_to '/pieces'
+      redirect_to piece_path(@piece)
    end
 
    def destroy 

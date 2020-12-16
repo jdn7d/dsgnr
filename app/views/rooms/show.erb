@@ -1,16 +1,20 @@
 <h1> <%= @room.name %> </h1>
 
-<h2> <%= @room.wall_color%> walls </h2>
-<h2> <%= @room.floor_color%> floors </h2>
-<h2> <%= @room.light%> lighting </h2> 
+<h2> Information </h2>
+<h3> Wall color: <%= @room.wall_color%>  </h3>
+<h3> Floor color/type: <%= @room.floor_color%>  </h3>
+<h3> Lighting type: <%= @room.light%>  </h3> 
+
+<h2> Pieces saved to this room </h2>
 
 <% @room.pieces.each do |piece| %>
    <li><%= link_to piece.name, room_piece_path(@room, piece) %></li>
-<% end %>
+<% end %> <br>
 
+<h2> Mood Board for this room </h2>
 <% @room.reference_photos.each do |reference_photo| %>
    <li><%= link_to reference_photo.link, room_reference_photo_path(@room, reference_photo) %></li>
-<% end %>
+<% end %> <br> <br>
 
 <%= link_to "Add a piece", new_room_piece_path(@room) %> <br>
 <%= link_to "Add a inspiration photo", new_room_reference_photo_path(@room) %> <br>
