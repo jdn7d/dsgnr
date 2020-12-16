@@ -36,7 +36,11 @@ class PiecesController < ApplicationController
 
    def update  
       @piece.update(piece_params)
-      redirect_to piece_path(@piece)
+      if @piece.update
+         redirect_to piece_path(@piece)
+      else
+         render :edit 
+      end
    end
 
    def destroy 
